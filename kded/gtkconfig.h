@@ -54,6 +54,7 @@ public Q_SLOTS:
 
     void onKdeglobalsSettingsChange(const KConfigGroup &group, const QByteArrayList &names) const;
     void onKWinSettingsChange(const KConfigGroup &group, const QByteArrayList &names) const;
+    void onKCMFontsSettingsChange(const KConfigGroup &group, const QByteArrayList &names) const;
     void onKCMInputSettingsChange(const KConfigGroup &group, const QByteArrayList &names) const;
     void onBreezeSettingsChange(const KConfigGroup &group, const QByteArrayList &names) const;
 
@@ -62,6 +63,7 @@ private:
     QScopedPointer<ThemePreviewer> themePreviewer;
     KConfigWatcher::Ptr kdeglobalsConfigWatcher;
     KConfigWatcher::Ptr kwinConfigWatcher;
+    KConfigWatcher::Ptr kcmfontsConfigWatcher;
     KConfigWatcher::Ptr kcminputConfigWatcher;
     KConfigWatcher::Ptr breezeConfigWatcher;
     void setGtk2Theme(const QString &themeName, const bool preferDarkTheme) const;
